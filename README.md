@@ -1,16 +1,19 @@
-# React + Vite
+# Professional Banquet Service
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сайт-лендинг и личный кабинет клиента для компании **Professional Banquet Service** — организация банкетов, корпоративов, свадеб и частных мероприятий.
 
-Currently, two official plugins are available:
+## Стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + Vite 8
+- Material UI 9 (MUI)
+- React Router 7
+- Emotion (CSS-in-JS)
 
-## React Compiler
+## Разработка
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install    # установка зависимостей
+npm run dev    # запуск dev-сервера
+npm run build  # сборка для production
+npm run lint   # проверка кода
+```
