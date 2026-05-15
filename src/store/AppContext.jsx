@@ -1,57 +1,57 @@
 import { createContext, useContext, useReducer, useEffect, useCallback } from 'react'
 
-const STORAGE_KEY = 'pbs_orders'
+const STORAGE_KEY = 'bs_orders'
 
 const sampleOrders = [
   {
     id: 'ORD-001', clientName: 'Иван Петров', clientPhone: '+7 (916) 555-12-34',
-    clientEmail: 'ivan@example.com', eventType: 'Свадьба',
+    clientEmail: 'ivan@example.com', eventType: 'Банкет',
     eventDate: '22.06.2026', guests: 80,
-    message: 'Хотим свадьбу на 80 человек в загородном стиле',
+    message: 'Нужно банкетное меню для свадьбы на 80 человек',
     status: 'in_progress', createdAt: '2026-05-10T10:30:00.000Z',
     comments: [
-      { id: 'c1', text: 'Заявка принята. Подбираем площадки.', author: 'employee', authorName: 'Анна Менеджер', createdAt: '2026-05-10T11:00:00.000Z' },
-      { id: 'c2', text: 'Рассматриваем варианты шатра и банкетного зала.', author: 'employee', authorName: 'Анна Менеджер', createdAt: '2026-05-11T09:00:00.000Z' },
+      { id: 'c1', text: 'Заявка принята. Начинаем составление меню.', author: 'employee', authorName: 'Ион Мельник', createdAt: '2026-05-10T11:00:00.000Z' },
+      { id: 'c2', text: 'Подготовили три варианта меню. Назначен тест-фуд.', author: 'employee', authorName: 'Ион Мельник', createdAt: '2026-05-11T09:00:00.000Z' },
     ],
-    employeeNotes: 'Клиент хочет шатер или банкетный зал. Бюджет до 500к.',
+    employeeNotes: 'Клиент хочет банкет с горячим. Бюджет питания — 2500/чел.',
   },
   {
     id: 'ORD-002', clientName: 'Мария Соколова', clientPhone: '+7 (903) 555-67-89',
-    clientEmail: 'maria@example.com', eventType: 'Корпоратив',
+    clientEmail: 'maria@example.com', eventType: 'Алкоголь',
     eventDate: '15.12.2026', guests: 120,
-    message: 'Нужен корпоратив для IT-компании с ведущим',
+    message: 'Нужен расчёт и закуп алкоголя для корпоратива',
     status: 'confirmed', createdAt: '2026-05-12T14:00:00.000Z',
     comments: [
-      { id: 'c3', text: 'Подтверждено. Площадка: Лофт «Индустрия».', author: 'employee', authorName: 'Анна Менеджер', createdAt: '2026-05-13T10:00:00.000Z' },
+      { id: 'c3', text: 'Сделали расчёт. Смета направлена. Ожидаем подтверждения.', author: 'employee', authorName: 'Ион Мельник', createdAt: '2026-05-13T10:00:00.000Z' },
     ],
-    employeeNotes: 'Корпоратив в декабре. Нужна программа с ведущим.',
+    employeeNotes: 'Корпоратив IT-компании. Премиальный сегмент. Бюджет на алкоголь — 1500/чел.',
   },
   {
     id: 'ORD-003', clientName: 'Иван Петров', clientPhone: '+7 (916) 555-12-34',
-    clientEmail: 'ivan@example.com', eventType: 'День рождения',
+    clientEmail: 'ivan@example.com', eventType: 'Контроль',
     eventDate: '05.07.2026', guests: 30,
-    message: 'День рождения на 30 человек, нужен кейтеринг',
+    message: 'Нужен полный контроль питания на мероприятии',
     status: 'new', createdAt: '2026-05-14T16:00:00.000Z',
     comments: [], employeeNotes: '',
   },
   {
     id: 'ORD-004', clientName: 'Алексей Смирнов', clientPhone: '+7 (495) 777-88-99',
-    clientEmail: 'alex@example.com', eventType: 'Бизнес-форум',
+    clientEmail: 'alex@example.com', eventType: 'Меню',
     eventDate: '10.07.2026', guests: 200,
-    message: 'Форум на 200 человек с презентациями и кофе-брейком',
+    message: 'Нужна корректировка меню, которое предложила площадка',
     status: 'new', createdAt: '2026-05-15T09:00:00.000Z',
     comments: [], employeeNotes: '',
   },
   {
     id: 'ORD-005', clientName: 'Иван Петров', clientPhone: '+7 (916) 555-12-34',
-    clientEmail: 'ivan@example.com', eventType: 'Мастер-класс',
+    clientEmail: 'ivan@example.com', eventType: 'Выезд',
     eventDate: '18.08.2026', guests: 15,
-    message: 'Кулинарный мастер-класс на 15 человек',
+    message: 'Нужен выезд на площадку для осмотра и переговоров',
     status: 'completed', createdAt: '2026-04-01T08:00:00.000Z',
     comments: [
-      { id: 'c4', text: 'Мероприятие проведено успешно. Клиент доволен.', author: 'employee', authorName: 'Анна Менеджер', createdAt: '2026-04-18T17:00:00.000Z' },
+      { id: 'c4', text: 'Выезд состоялся. Составлен акт осмотра. Замечаний нет.', author: 'employee', authorName: 'Ион Мельник', createdAt: '2026-04-18T17:00:00.000Z' },
     ],
-    employeeNotes: 'Проведено на площадке заказчика.',
+    employeeNotes: 'Площадка: Конгресс-Отель. Всё в норме.',
   },
 ]
 

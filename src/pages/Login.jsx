@@ -8,7 +8,7 @@ export default function Login() {
   const navigate = useNavigate()
   const [tab, setTab] = useState(0)
   const [client, setClient] = useState({ name: 'Иван Петров', email: 'ivan@example.com' })
-  const [employee, setEmployee] = useState({ name: 'Анна Менеджер', code: '' })
+  const [employee, setEmployee] = useState({ name: 'Ион Мельник', code: '' })
   const [error, setError] = useState('')
 
   const handleClientLogin = (e) => {
@@ -37,7 +37,7 @@ export default function Login() {
 
           <Tabs value={tab} onChange={(_, v) => { setTab(v); setError('') }} variant="fullWidth" sx={{ mb: 3, '& .MuiTab-root': { textTransform: 'none', fontWeight: 600 } }}>
             <Tab label="Клиент" />
-            <Tab label="Сотрудник ПБС" icon={<BadgeIcon sx={{ fontSize: 18 }} />} iconPosition="start" />
+            <Tab label="Сотрудник" icon={<BadgeIcon sx={{ fontSize: 18 }} />} iconPosition="start" />
           </Tabs>
 
           {error && <Alert severity="error" sx={{ mb: 2.5, borderRadius: 2 }}>{error}</Alert>}

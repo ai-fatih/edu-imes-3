@@ -87,7 +87,7 @@ export default function Hero({ onOrder }) {
               animation: 'fadeUp 0.6s ease 0.2s both',
             }}
           >
-            Идеальные мероприятия
+            Ваша персональная
           </Typography>
           <Typography
             variant="h4"
@@ -99,7 +99,7 @@ export default function Hero({ onOrder }) {
               animation: 'fadeUp 0.6s ease 0.3s both',
             }}
           >
-            начинаются с нас
+            банкетная служба
           </Typography>
           <Typography
             variant="body1"
@@ -107,13 +107,13 @@ export default function Hero({ onOrder }) {
               color: 'rgba(255,255,255,0.55)',
               fontSize: { xs: '0.85rem', sm: '0.95rem' },
               mb: 3,
-              maxWidth: 400,
+              maxWidth: 420,
               mx: 'auto',
               lineHeight: 1.7,
               animation: 'fadeUp 0.6s ease 0.4s both',
             }}
           >
-            Professional Banquet Service — профессиональная организация банкетов, корпоративов, свадеб и частных мероприятий «под ключ» в Москве и области.
+            Профессиональное сопровождение и полный контроль питания на вашем мероприятии. Работаем как ваш представитель на площадке.
           </Typography>
           <Box sx={{ animation: 'fadeUp 0.6s ease 0.5s both' }}>
             <Button

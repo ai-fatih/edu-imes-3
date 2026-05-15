@@ -72,7 +72,7 @@ export default function Navbar() {
                 color: showScrolled ? 'primary.main' : 'white',
               }}
             >
-              PRO BANQUET
+              БАНКЕТНАЯ СЛУЖБА
             </Typography>
           </Box>
 

@@ -3,14 +3,14 @@ import { Container, Typography, Grid, Paper, Box, TextField, Button, Snackbar, A
 import useInView from '../hooks/useInView'
 import PhoneIcon from '@mui/icons-material/Phone'
 import EmailIcon from '@mui/icons-material/Email'
-import LocationOnIcon from '@mui/icons-material/LocationOn'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 const initialForm = { name: '', phone: '', email: '', message: '' }
 
 const contactInfo = [
-  { icon: <PhoneIcon />, title: 'Телефон', value: '+7 (495) 123-45-67' },
-  { icon: <EmailIcon />, title: 'Email', value: 'info@probanquet.ru' },
-  { icon: <LocationOnIcon />, title: 'Адрес', value: 'г. Москва, ул. Тверская, 15' },
+  { icon: <PhoneIcon />, title: 'Телефон', value: '+7 (964) 72-888-44' },
+  { icon: <EmailIcon />, title: 'Email', value: 'ion-melnik@bk.ru' },
+  { icon: <AccountCircleIcon />, title: 'Основатель', value: 'Ион Мельник' },
 ]
 
 export default function Contact() {

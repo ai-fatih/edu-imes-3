@@ -5,20 +5,20 @@ import {
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import RestaurantIcon from '@mui/icons-material/Restaurant'
-import CelebrationIcon from '@mui/icons-material/Celebration'
-import BusinessIcon from '@mui/icons-material/Business'
-import CakeIcon from '@mui/icons-material/Cake'
-import ForumIcon from '@mui/icons-material/Forum'
-import LunchDiningIcon from '@mui/icons-material/LunchDining'
+import MenuBookIcon from '@mui/icons-material/MenuBook'
+import EditIcon from '@mui/icons-material/Edit'
+import WineBarIcon from '@mui/icons-material/WineBar'
+import LocalShippingIcon from '@mui/icons-material/LocalShipping'
+import LocationOnIcon from '@mui/icons-material/LocationOn'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import { useApp } from '../store/AppContext'
 
 const presetEvents = [
-  { value: 'Свадьба', icon: <CelebrationIcon />, color: '#e91e63' },
-  { value: 'Корпоратив', icon: <BusinessIcon />, color: '#1565c0' },
-  { value: 'День рождения', icon: <CakeIcon />, color: '#ff6f00' },
-  { value: 'Бизнес-форум', icon: <ForumIcon />, color: '#2e7d32' },
-  { value: 'Кейтеринг', icon: <LunchDiningIcon />, color: '#6a1b9a' },
+  { value: 'Составление меню', icon: <MenuBookIcon />, color: '#e91e63' },
+  { value: 'Корректировка меню', icon: <EditIcon />, color: '#1565c0' },
+  { value: 'Расчёт алкоголя', icon: <WineBarIcon />, color: '#ff6f00' },
+  { value: 'Закуп алкоголя', icon: <LocalShippingIcon />, color: '#2e7d32' },
+  { value: 'Выезд на площадку', icon: <LocationOnIcon />, color: '#6a1b9a' },
   { value: 'Другое', icon: <MoreHorizIcon />, color: '#757575' },
 ]
 

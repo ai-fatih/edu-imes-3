@@ -38,7 +38,7 @@ export default function Dashboard() {
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2, mb: 4 }}>
           <Box>
             <Typography variant="h3" sx={{ fontWeight: 700 }}>Здравствуйте, {name}!</Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mt: 0.5 }}>Ваши бронирования в Professional Banquet Service</Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ mt: 0.5 }}>Ваши заказы в Банкетной Службе</Typography>
           </Box>
           <Box sx={{ display: 'flex', gap: 1.5 }}>
             <Button variant="contained" color="secondary" sx={{ color: 'white', borderRadius: 10 }} startIcon={<AddIcon />} onClick={() => setOrderOpen(true)}>

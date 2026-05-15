@@ -132,7 +132,7 @@ export default function BlockView() {
                     начинаются с нас
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.6)', mb: 2, fontSize: '0.75rem' }}>
-                    Professional Banquet Service — организация мероприятий «под ключ» с 2008 года в Москве и области.
+                    Профессиональное сопровождение и контроль питания на вашем мероприятии.
                   </Typography>
                   <Box sx={{ px: 3, py: 1.2, borderRadius: 2, bgcolor: '#c6a862', color: 'white', fontSize: '0.85rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 1, boxShadow: '0 4px 16px rgba(198,168,98,0.25)' }}>
                     Заказать мероприятие

@@ -1,19 +1,19 @@
 import { Container, Typography, Grid, Card, CardContent, Box } from '@mui/material'
 import useInView from '../hooks/useInView'
-import EventIcon from '@mui/icons-material/Event'
-import GroupsIcon from '@mui/icons-material/Groups'
-import CakeIcon from '@mui/icons-material/Cake'
-import BusinessIcon from '@mui/icons-material/Business'
-import ChairIcon from '@mui/icons-material/Chair'
-import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
+import MenuBookIcon from '@mui/icons-material/MenuBook'
+import EditIcon from '@mui/icons-material/Edit'
+import WineBarIcon from '@mui/icons-material/WineBar'
+import LocalShippingIcon from '@mui/icons-material/LocalShipping'
+import LocationOnIcon from '@mui/icons-material/LocationOn'
+import FactCheckIcon from '@mui/icons-material/FactCheck'
 
 const services = [
-  { icon: <EventIcon sx={{ fontSize: 36 }} />, title: 'Корпоративы', desc: 'Организация корпоративных мероприятий любого масштаба — от тимбилдинга до новогоднего банкета.' },
-  { icon: <CakeIcon sx={{ fontSize: 36 }} />, title: 'Свадьбы', desc: 'Создаём свадьбу вашей мечты: площадка, меню, декор, развлекательная программа.' },
-  { icon: <GroupsIcon sx={{ fontSize: 36 }} />, title: 'Частные торжества', desc: 'Дни рождения, юбилеи, семейные праздники — любой формат и количество гостей.' },
-  { icon: <BusinessIcon sx={{ fontSize: 36 }} />, title: 'Бизнес-мероприятия', desc: 'Конференции, форумы, презентации с полным техническим обеспечением.' },
-  { icon: <ChairIcon sx={{ fontSize: 36 }} />, title: 'Подбор площадки', desc: 'Поможем найти идеальное место: лофты, усадьбы, банкетные залы, шатры.' },
-  { icon: <RestaurantMenuIcon sx={{ fontSize: 36 }} />, title: 'Кейтеринг', desc: 'Разнообразное меню от шеф-повара — от фуршета до многоярусного банкета.' },
+  { icon: <MenuBookIcon sx={{ fontSize: 36 }} />, title: 'Составление меню', desc: 'Разработаем меню с нуля под формат и бюджет вашего мероприятия. Банкет, фуршет, BBQ, кофе-брейк — любой формат.' },
+  { icon: <EditIcon sx={{ fontSize: 36 }} />, title: 'Корректировка меню', desc: 'Изучим предложение площадки или кейтеринга, внесём правки, укажем на недочёты, предложим альтернативу и покажем, где можно сэкономить.' },
+  { icon: <WineBarIcon sx={{ fontSize: 36 }} />, title: 'Расчёт и подбор алкоголя', desc: 'Сделаем правильный расчёт спиртного, оптимизируем затраты, предложим ассортимент. Привлечём сомелье для подбора.' },
+  { icon: <LocalShippingIcon sx={{ fontSize: 36 }} />, title: 'Закупка алкоголя', desc: 'Поможем приобрести алкогольные и безалкогольные напитки напрямую у официальных поставщиков по закупочным ценам.' },
+  { icon: <LocationOnIcon sx={{ fontSize: 36 }} />, title: 'Выезд на площадку', desc: 'Приедем как ваш представитель: осмотр площадки, контроль составления меню, помощь в тест-фуде, утверждение сетапа, проверка СанПиН и ХАССП.' },
+  { icon: <FactCheckIcon sx={{ fontSize: 36 }} />, title: 'Полный контроль питания', desc: 'В день мероприятия контролируем тайминги подачи, работу персонала, хранение продуктов. Пересчитываем алкоголь. Предоставляем письменный отчёт.' },
 ]
 
 const iconBgColors = [
@@ -43,9 +43,9 @@ export default function Services() {
           </Typography>
           <Typography
             variant="body1"
-            sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto', mb: 6 }}
+            sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto' }}
           >
-            Предоставляем полный спектр услуг по организации мероприятий «под ключ»
+            Профессиональное сопровождение всех этапов подготовки и проведения мероприятия по части питания
           </Typography>
         </Box>
         <Grid container spacing={3}>
@@ -88,7 +88,7 @@ export default function Services() {
                   <Typography variant="h5" gutterBottom sx={{ fontWeight: 700 }}>
                     {s.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 280, mx: 'auto' }}>
+                  <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 300, mx: 'auto' }}>
                     {s.desc}
                   </Typography>
                 </CardContent>

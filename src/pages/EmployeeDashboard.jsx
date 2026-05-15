@@ -26,7 +26,7 @@ export default function EmployeeDashboard() {
   const [commentText, setCommentText] = useState('')
   const [notesText, setNotesText] = useState('')
 
-  const empName = params.get('name') || 'Анна Менеджер'
+  const empName = params.get('name') || 'Ион Мельник'
 
   const filtered = useMemo(() => {
     if (filter === 'all') return orders
@@ -79,7 +79,7 @@ export default function EmployeeDashboard() {
               <Chip label="CRM" color="secondary" size="small" sx={{ borderRadius: 6, color: 'white' }} />
             </Box>
             <Typography variant="body1" color="text.secondary">
-              {empName} · Professional Banquet Service
+              {empName} · Банкетная Служба
             </Typography>
           </Box>
           <Button variant="outlined" color="error" startIcon={<LogoutIcon />} onClick={() => navigate('/')} sx={{ borderRadius: 10 }}>
