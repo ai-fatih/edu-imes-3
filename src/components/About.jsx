@@ -54,8 +54,8 @@ export default function About() {
   return (
     <Box id="about" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'white' }}>
       <Container maxWidth="lg">
-        <Grid container spacing={8} alignItems="center">
-          <Grid item xs={12} md={6}>
+        <Grid container spacing={8} sx={{ alignItems: 'center' }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box
               ref={ref}
               sx={{
@@ -89,10 +89,10 @@ export default function About() {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Grid container spacing={2.5}>
               {stats.map((s, i) => (
-                <Grid item xs={6} key={s.label}>
+                <Grid size={{ xs: 6 }} key={s.label}>
                   <Paper
                     elevation={0}
                     sx={{
@@ -143,7 +143,7 @@ export default function About() {
 
           <Grid container spacing={3}>
             {team.map((t, i) => (
-              <Grid item xs={12} sm={6} md={3} key={t.name}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={t.name}>
                 <Paper
                   elevation={0}
                   sx={{

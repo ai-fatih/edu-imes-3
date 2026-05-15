@@ -8,17 +8,22 @@ import {
 import MenuIcon from '@mui/icons-material/Menu'
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
 import CloseIcon from '@mui/icons-material/Close'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import { useThemeMode } from '../store/ThemeContext'
 
 const navItems = [
   { label: 'Главная', path: '/' },
   { label: 'Услуги', path: '/#services' },
   { label: 'О нас', path: '/#about' },
+  { label: 'База знаний', path: '/knowledge' },
   { label: 'Контакты', path: '/#contact' },
 ]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { mode, toggle } = useThemeMode()
   const navigate = useNavigate()
   const location = useLocation()
   const isHome = location.pathname === '/'
@@ -117,6 +122,17 @@ export default function Navbar() {
             >
               CRM
             </Button>
+            <IconButton
+              onClick={toggle}
+              size="small"
+              sx={{
+                ml: 1,
+                color: showScrolled ? 'text.secondary' : 'rgba(255,255,255,0.7)',
+                '&:hover': { color: showScrolled ? 'secondary.main' : 'white' },
+              }}
+            >
+              {mode === 'dark' ? <LightModeIcon fontSize="small" /> : <DarkModeIcon fontSize="small" />}
+            </IconButton>
           </Box>
 
           <IconButton
@@ -168,6 +184,14 @@ export default function Navbar() {
             >
               <ListItemText
                 primary="Панель управления (CRM)"
+                primaryTypographyProps={{ fontWeight: 500, sx: { opacity: 0.7 } }}
+              />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton onClick={toggle} sx={{ px: 3, py: 1.5 }}>
+              <ListItemText
+                primary={mode === 'dark' ? 'Светлая тема' : 'Тёмная тема'}
                 primaryTypographyProps={{ fontWeight: 500, sx: { opacity: 0.7 } }}
               />
             </ListItemButton>

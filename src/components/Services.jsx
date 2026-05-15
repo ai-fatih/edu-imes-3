@@ -50,7 +50,7 @@ export default function Services() {
         </Box>
         <Grid container spacing={3}>
           {services.map((s, i) => (
-            <Grid item xs={12} sm={6} md={4} key={s.title}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={s.title}>
               <Card
                 sx={{
                   height: '100%',

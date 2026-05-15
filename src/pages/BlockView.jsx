@@ -39,7 +39,7 @@ export default function BlockView() {
         </Box>
 
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Paper elevation={0} sx={{ borderRadius: 3, overflow: 'hidden', border: '2px solid', borderColor: selected === 'a' ? '#c6a862' : 'grey.200', transition: '0.2s' }}>
               <Box sx={{ bgcolor: '#0d1150', color: 'white', px: 2.5, py: 1.5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box>
@@ -105,7 +105,7 @@ export default function BlockView() {
             </Paper>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Paper elevation={0} sx={{ borderRadius: 3, overflow: 'hidden', border: '2px solid', borderColor: selected === 'b' ? '#1a237e' : 'grey.200', transition: '0.2s' }}>
               <Box sx={{ bgcolor: '#1a237e', color: 'white', px: 2.5, py: 1.5, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box>

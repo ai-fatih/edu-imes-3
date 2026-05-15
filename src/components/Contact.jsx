@@ -50,15 +50,15 @@ export default function Contact() {
         <Grid
           container
           spacing={6}
-          maxWidth={960}
-          mx="auto"
           sx={{
+            maxWidth: 960,
+            mx: 'auto',
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(30px)',
             transition: 'all 0.6s ease',
           }}
         >
-          <Grid item xs={12} md={5}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
               {contactInfo.map((item) => (
                 <Paper
@@ -102,7 +102,7 @@ export default function Contact() {
               ))}
             </Box>
           </Grid>
-          <Grid item xs={12} md={7}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <Paper
               elevation={0}
               sx={{
@@ -114,10 +114,10 @@ export default function Contact() {
             >
               <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
                 <Grid container spacing={2.5}>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField fullWidth label="Ваше имя" size="small" name="name" value={form.name} onChange={handleChange} required />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <TextField fullWidth label="Телефон" size="small" name="phone" value={form.phone} onChange={handleChange} required />
                   </Grid>
                 </Grid>

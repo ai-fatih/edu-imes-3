@@ -57,7 +57,7 @@ export default function Login() {
           )}
 
           <Divider sx={{ my: 2.5 }} />
-          <Typography variant="body2" color="text.secondary" textAlign="center">
+          <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center' }}>
             Нет аккаунта?{' '}
             <Link href="#" underline="hover" sx={{ color: 'secondary.main', cursor: 'pointer', fontWeight: 600 }}>Зарегистрироваться</Link>
           </Typography>

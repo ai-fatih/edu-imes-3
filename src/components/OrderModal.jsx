@@ -35,9 +35,13 @@ const emptyForm = {
   eventType: '', eventTypeOther: '', eventDate: '', guests: 30, message: '',
 }
 
-export default function OrderModal({ open, onClose }) {
+export default function OrderModal({ open, onClose, initialData }) {
   const { addOrder } = useApp()
-  const [form, setForm] = useState(emptyForm)
+  const [form, setForm] = useState(
+    () => initialData
+      ? { ...emptyForm, clientName: initialData.clientName || '', clientPhone: initialData.clientPhone || '', clientEmail: initialData.clientEmail || '' }
+      : emptyForm,
+  )
   const [animating, setAnimating] = useState(false)
 
   const h = (e) => setForm({ ...form, [e.target.name]: e.target.value })
@@ -64,13 +68,13 @@ export default function OrderModal({ open, onClose }) {
   const onCloseWrapped = () => { setForm(emptyForm); onClose() }
 
   return (
-    <Dialog open={open} onClose={onCloseWrapped} maxWidth="sm" fullWidth PaperProps={{ sx: { borderRadius: 3, position: 'relative' } }}>
+    <Dialog open={open} onClose={onCloseWrapped} maxWidth="sm" fullWidth slotProps={{ paper: { sx: { borderRadius: 3, position: 'relative' } } }}>
       <IconButton onClick={onCloseWrapped} sx={{ position: 'absolute', top: 12, right: 12, zIndex: 1, color: 'grey.400', '&:hover': { color: 'text.primary' } }}>
         <CloseIcon />
       </IconButton>
 
       <DialogTitle sx={{ pb: 0, pt: 3, pr: 6 }}>
-        <Typography variant="h5" fontWeight={700}>Заказать мероприятие</Typography>
+        <Typography variant="h5" component="div" fontWeight={700}>Заказать мероприятие</Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>Заполните форму — мы перезвоним в течение 15 минут</Typography>
       </DialogTitle>
 
@@ -78,10 +82,10 @@ export default function OrderModal({ open, onClose }) {
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
 
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField fullWidth label="Ваше имя" size="small" name="clientName" value={form.clientName} onChange={h} required />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField fullWidth label="Телефон" size="small" name="clientPhone" value={form.clientPhone} onChange={h} required />
             </Grid>
           </Grid>
@@ -93,7 +97,7 @@ export default function OrderModal({ open, onClose }) {
             </Typography>
             <Grid container spacing={1.5}>
               {presetEvents.map((ev) => (
-                <Grid item key={ev.value}>
+                <Grid key={ev.value}>
                   <Box
                     onClick={() => selectType(ev.value)}
                     sx={{
@@ -125,11 +129,11 @@ export default function OrderModal({ open, onClose }) {
             )}
           </Box>
 
-          <Grid container spacing={2} alignItems="flex-start">
-            <Grid item xs={12} sm={5}>
-              <TextField fullWidth label="Дата" size="small" name="eventDate" value={form.eventDate} onChange={h} type="date" InputLabelProps={{ shrink: true }} required />
+          <Grid container spacing={2} sx={{ alignItems: 'flex-start' }}>
+            <Grid size={{ xs: 12, sm: 5 }}>
+              <TextField fullWidth label="Дата" size="small" name="eventDate" value={form.eventDate} onChange={h} type="date" slotProps={{ inputLabel: { shrink: true } }} required />
             </Grid>
-            <Grid item xs={12} sm={7}>
+            <Grid size={{ xs: 12, sm: 7 }}>
               <Box sx={{ px: 0.5 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
                   <RestaurantIcon sx={{ fontSize: 18, color: 'secondary.main' }} />
