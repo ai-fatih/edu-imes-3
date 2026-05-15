@@ -102,6 +102,19 @@ export default function Navbar() {
             >
               Личный кабинет
             </Button>
+            <Button
+              variant={scrolled ? 'outlined' : 'text'}
+              size="small"
+              sx={{
+                ml: 1,
+                color: scrolled ? 'text.secondary' : 'rgba(255,255,255,0.7)',
+                fontSize: '0.8rem',
+                '&:hover': { color: scrolled ? 'secondary.main' : 'white' },
+              }}
+              onClick={() => navigate('/login')}
+            >
+              CRM
+            </Button>
           </Box>
 
           <IconButton
@@ -143,6 +156,17 @@ export default function Navbar() {
               <ListItemText
                 primary="Личный кабинет"
                 primaryTypographyProps={{ fontWeight: 700, sx: { color: 'secondary.light' } }}
+              />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={() => { setMobileOpen(false); navigate('/login') }}
+              sx={{ px: 3, py: 1.5 }}
+            >
+              <ListItemText
+                primary="Панель управления (CRM)"
+                primaryTypographyProps={{ fontWeight: 500, sx: { opacity: 0.7 } }}
               />
             </ListItemButton>
           </ListItem>
