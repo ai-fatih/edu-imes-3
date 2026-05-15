@@ -398,8 +398,108 @@ body {
     </div>
   </div>
 
+  <!-- Readiness assessment -->
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title">Оценка готовности проекта</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;"><span>Анализ требований</span><span style="font-weight:700;">80%</span></div>
+        <div style="height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;"><div style="width:80%;height:100%;background:#1a237e;border-radius:4px;"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin:8px 0 4px;margin-top:12px;"><span>Прототипы Figma</span><span style="font-weight:700;">60%</span></div>
+        <div style="height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;"><div style="width:60%;height:100%;background:#c6a862;border-radius:4px;"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin:8px 0 4px;margin-top:12px;"><span>Frontend (React + MUI)</span><span style="font-weight:700;">90%</span></div>
+        <div style="height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;"><div style="width:90%;height:100%;background:#2e7d32;border-radius:4px;"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;"><span>Архитектура и БД</span><span style="font-weight:700;">50%</span></div>
+        <div style="height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;"><div style="width:50%;height:100%;background:#c6a862;border-radius:4px;"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin:8px 0 4px;margin-top:12px;"><span>Деплой / CI-CD</span><span style="font-weight:700;">70%</span></div>
+        <div style="height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;"><div style="width:70%;height:100%;background:#1a237e;border-radius:4px;"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin:8px 0 4px;margin-top:12px;"><span>Документация и отчёт</span><span style="font-weight:700;">30%</span></div>
+        <div style="height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;"><div style="width:30%;height:100%;background:#c62828;border-radius:4px;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- User journey & Business value -->
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-title">Пользовательский путь (User Flow)</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+          <span style="background:#1a237e;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">1</span>
+          <span>Клиент заходит на сайт-визитку → видит Hero-блок с предложением</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+          <span style="background:#c6a862;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">2</span>
+          <span>Изучает услуги (корпоративы, свадьбы, кейтеринг) → заполняет форму</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+          <span style="background:#1a237e;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">3</span>
+          <span>Регистрируется в личном кабинете → отслеживает статус бронирования</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;">
+          <span style="background:#2e7d32;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">4</span>
+          <span>Получает подтверждение, управляет заказами, связывается с менеджером</span>
+        </div>
+        <div style="margin-top:8px;background:#f9fafb;border-radius:8px;padding:10px;font-size:12px;color:#6b7280;">
+          <strong>Инструменты:</strong> Figma (прототип), React Router (навигация), MUI (UI)
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Ценность для бизнеса и клиента</div>
+      <div style="margin-bottom:12px;">
+        <div style="font-weight:600;font-size:14px;color:#1a237e;margin-bottom:6px;">Для компании:</div>
+        <ul style="font-size:13px;color:#374151;list-style:none;">
+          <li style="padding:3px 0;">• Сокращение времени обработки заявки с 2 дней → до 2 часов</li>
+          <li style="padding:3px 0;">• Снижение нагрузки на менеджеров (самообслуживание в ЛК)</li>
+          <li style="padding:3px 0;">• Рост конверсии посетитель → заявка (+25% за счёт формы на сайте)</li>
+          <li style="padding:3px 0;">• Единая база клиентов и истории бронирований</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:14px;color:#c6a862;margin-bottom:6px;">Для клиента:</div>
+        <ul style="font-size:13px;color:#374151;list-style:none;">
+          <li style="padding:3px 0;">• Подача заявки в один клик без звонков</li>
+          <li style="padding:3px 0;">• Прозрачный статус бронирования 24/7</li>
+          <li style="padding:3px 0;">• История всех заказов в личном кабинете</li>
+        </ul>
+      </div>
+      <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#f9fafb;border-radius:8px;padding:10px;">
+        <div><span style="font-weight:600;">KPI:</span><br><span style="font-size:12px;">Конверсия → 25%<br>Время заявки → -85%<br>Загрузка стр. → < 2 с</span></div>
+        <div><span style="font-weight:600;">SLA:</span><br><span style="font-size:12px;">Ответ менеджера → 15 мин<br>Доступность → 99.9%<br>Uptime (Vercel) → 99.99%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagrams list -->
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title">Список схем и диаграмм к отчёту</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="border-bottom:2px solid #e5e7eb;">
+          <th style="text-align:left;padding:8px 4px;color:#6b7280;font-weight:600;">№</th>
+          <th style="text-align:left;padding:8px 4px;color:#6b7280;font-weight:600;">Диаграмма / схема</th>
+          <th style="text-align:left;padding:8px 4px;color:#6b7280;font-weight:600;">Описание</th>
+          <th style="text-align:left;padding:8px 4px;color:#6b7280;font-weight:600;">Инструмент</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f3f4f6;"><td style="padding:8px 4px;">1</td><td style="padding:8px 4px;font-weight:600;">Организационная структура PBS</td><td style="padding:8px 4px;color:#6b7280;">Схема подчинения, отделы</td><td style="padding:8px 4px;">Draw.io / Word</td></tr>
+        <tr style="border-bottom:1px solid #f3f4f6;"><td style="padding:8px 4px;">2</td><td style="padding:8px 4px;font-weight:600;">BPMN — процесс обработки заказа</td><td style="padding:8px 4px;color:#6b7280;">Цепочка от заявки до исполнения</td><td style="padding:8px 4px;">Camunda / Draw.io</td></tr>
+        <tr style="border-bottom:1px solid #f3f4f6;"><td style="padding:8px 4px;">3</td><td style="padding:8px 4px;font-weight:600;">Use Case диаграмма</td><td style="padding:8px 4px;color:#6b7280;">Актёры: гость, клиент, менеджер</td><td style="padding:8px 4px;">Draw.io / Lucidchart</td></tr>
+        <tr style="border-bottom:1px solid #f3f4f6;"><td style="padding:8px 4px;">4</td><td style="padding:8px 4px;font-weight:600;">ER-диаграмма БД</td><td style="padding:8px 4px;color:#6b7280;">Сущности: клиент, бронь, услуга</td><td style="padding:8px 4px;">Draw.io / dbdiagram.io</td></tr>
+        <tr style="border-bottom:1px solid #f3f4f6;"><td style="padding:8px 4px;">5</td><td style="padding:8px 4px;font-weight:600;">Архитектура приложения</td><td style="padding:8px 4px;color:#6b7280;">Схема компонентов React, связи</td><td style="padding:8px 4px;">Draw.io / Figma</td></tr>
+        <tr style="border-bottom:1px solid #f3f4f6;"><td style="padding:8px 4px;">6</td><td style="padding:8px 4px;font-weight:600;">Макеты страниц (Figma)</td><td style="padding:8px 4px;color:#6b7280;">Скриншоты: главная, ЛК, логин</td><td style="padding:8px 4px;">Figma / браузер</td></tr>
+        <tr style="border-bottom:1px solid #f3f4f6;"><td style="padding:8px 4px;">7</td><td style="padding:8px 4px;font-weight:600;">Диаграмма развёртывания</td><td style="padding:8px 4px;color:#6b7280;">Git → Vercel → Браузер</td><td style="padding:8px 4px;">Draw.io</td></tr>
+        <tr><td style="padding:8px 4px;">8</td><td style="padding:8px 4px;font-weight:600;">Тест-кейсы (таблица)</td><td style="padding:8px 4px;color:#6b7280;">Набор тестов: форма, логин, ЛК</td><td style="padding:8px 4px;">Excel / Word</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <!-- Tech stack -->
-  <div class="card" style="margin-top:4px;">
+  <div class="card" style="margin-bottom:20px;">
     <div class="card-title">Используемые технологии и инструменты</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;">
       <div><div style="font-weight:600;font-size:13px;">Фреймворк</div><div style="font-size:12px;color:#6b7280;">React 19 + Vite 8</div></div>
@@ -408,7 +508,39 @@ body {
       <div><div style="font-weight:600;font-size:13px;">Хостинг</div><div style="font-size:12px;color:#6b7280;">Vercel + GitHub</div></div>
       <div><div style="font-weight:600;font-size:13px;">Прототипы</div><div style="font-size:12px;color:#6b7280;">Figma</div></div>
       <div><div style="font-weight:600;font-size:13px;">Моделирование</div><div style="font-size:12px;color:#6b7280;">BPMN, UML, ER-диаграммы</div></div>
+      <div><div style="font-weight:600;font-size:13px;">Диаграммы</div><div style="font-size:12px;color:#6b7280;">Draw.io / Lucidchart</div></div>
       <div><div style="font-weight:600;font-size:13px;">Документы</div><div style="font-size:12px;color:#6b7280;">Word, PDF, ЭИОС</div></div>
+    </div>
+  </div>
+
+  <!-- Presentation plan -->
+  <div class="card" style="margin-bottom:20px;">
+    <div class="card-title">План презентации для защиты</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:#1a237e;margin-bottom:8px;">Слайд 1 — Титульный</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Название проекта, ФИО, группа, компания</div>
+        <div style="font-weight:600;font-size:13px;color:#1a237e;margin-bottom:8px;">Слайд 2 — О компании</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Professional Banquet Service, сфера деятельности, 2008 г., 500+ мероприятий</div>
+        <div style="font-weight:600;font-size:13px;color:#1a237e;margin-bottom:8px;">Слайд 3 — Цель и задачи</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Цель практики, задачи, роли студентов</div>
+        <div style="font-weight:600;font-size:13px;color:#1a237e;margin-bottom:8px;">Слайд 4 — Анализ и требования</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">BPMN-диаграмма, оргструктура, функциональные требования</div>
+        <div style="font-weight:600;font-size:13px;color:#1a237e;margin-bottom:8px;">Слайд 5 — Проектирование</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Use Case, архитектура приложения, ER-диаграмма, прототипы Figma</div>
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:13px;color:#c6a862;margin-bottom:8px;">Слайд 6 — Реализация</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Скриншоты сайта: Hero, услуги, ЛК; стек технологий</div>
+        <div style="font-weight:600;font-size:13px;color:#c6a862;margin-bottom:8px;">Слайд 7 — Тестирование</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Таблица тест-кейсов, результаты, исправления</div>
+        <div style="font-weight:600;font-size:13px;color:#c6a862;margin-bottom:8px;">Слайд 8 — Результаты</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Готовый продукт, KPI (конверсия +25%, время заявки -85%), ценность для бизнеса</div>
+        <div style="font-weight:600;font-size:13px;color:#c6a862;margin-bottom:8px;">Слайд 9 — Заключение</div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px;">Выводы, планы развития (CRM, онлайн-оплата)</div>
+        <div style="font-weight:600;font-size:13px;color:#c6a862;margin-bottom:8px;">Слайд 10 — Спасибо</div>
+        <div style="font-size:12px;color:#6b7280;">Q&A, контакты</div>
+      </div>
     </div>
   </div>
 

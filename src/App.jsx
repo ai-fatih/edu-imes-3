@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import EmployeeDashboard from './pages/EmployeeDashboard'
+import BlockView from './pages/BlockView'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/employee/dashboard" element={<EmployeeDashboard />} />
+            <Route path="/block-view" element={<BlockView />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
