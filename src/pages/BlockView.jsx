@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import {
   Container, Typography, Grid, Box, Button, Chip, Paper, IconButton,
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
-  Rating, Tooltip
+  Rating
 } from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import DiamondIcon from '@mui/icons-material/Diamond'

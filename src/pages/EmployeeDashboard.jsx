@@ -129,7 +129,7 @@ export default function EmployeeDashboard() {
       ...(avgNps !== null ? [{ label: 'NPS', value: avgNps, icon: <StarIcon />, color: avgNps >= 50 ? 'success.main' : avgNps >= 0 ? 'warning.main' : 'error.main' }] : []),
       ...(avgDuration !== null ? [{ label: 'Средняя длительность', value: `${avgDuration} дн.`, icon: <AccessTimeIcon />, color: 'info.main' }] : []),
     ],
-    [orders, activeProjects, totalSavings, totalRevenue, avgNps, avgDuration, avgNps, avgDuration],
+    [orders, activeProjects, totalSavings, totalRevenue, avgNps, avgDuration],
   )
 
   const openOrder = (order) => {

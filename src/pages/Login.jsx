@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
-import { Container, Paper, Typography, TextField, Button, Box, Tabs, Tab, Alert, Divider, Link } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { Container, Paper, Typography, TextField, Button, Box, Tabs, Tab, Alert } from '@mui/material'
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
 import BadgeIcon from '@mui/icons-material/Badge'
 
@@ -56,11 +56,7 @@ export default function Login() {
             </Box>
           )}
 
-          <Divider sx={{ my: 2.5 }} />
-          <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center' }}>
-            Нет аккаунта?{' '}
-            <Link href="#" underline="hover" sx={{ color: 'secondary.main', cursor: 'pointer', fontWeight: 600 }}>Зарегистрироваться</Link>
-          </Typography>
+
         </Paper>
       </Container>
     </Box>

@@ -1,5 +1,7 @@
 import { createContext, useContext, useReducer, useEffect, useCallback } from 'react'
 
+/* eslint-disable react-refresh/only-export-components */
+
 const STORAGE_KEY = 'bs_orders'
 
 const sampleOrders = [

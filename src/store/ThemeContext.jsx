@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useEffect, useMemo } from 'react'
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles'
 import baseTheme from '../theme'
 
+/* eslint-disable react-refresh/only-export-components */
+
 const Ctx = createContext(null)
 
 export function ThemeProvider({ children }) {

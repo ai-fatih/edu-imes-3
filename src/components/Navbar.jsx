@@ -8,10 +8,6 @@ import {
 import MenuIcon from '@mui/icons-material/Menu'
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
 import CloseIcon from '@mui/icons-material/Close'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import LightModeIcon from '@mui/icons-material/LightMode'
-import { useThemeMode } from '../store/ThemeContext'
-
 const navItems = [
   { label: 'Главная', path: '/' },
   { label: 'Услуги', path: '/#services' },
@@ -23,7 +19,6 @@ const navItems = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { mode, toggle } = useThemeMode()
   const navigate = useNavigate()
   const location = useLocation()
   const isHome = location.pathname === '/'
@@ -81,7 +76,7 @@ export default function Navbar() {
             </Typography>
           </Box>
 
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5 }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1 }}>
             {navItems.map((item) => (
               <Button
                 key={item.label}
@@ -89,6 +84,7 @@ export default function Navbar() {
                 sx={{
                   color: showScrolled ? 'text.primary' : 'white',
                   opacity: 0.85,
+                  whiteSpace: 'nowrap',
                   '&:hover': { opacity: 1, color: showScrolled ? 'secondary.main' : 'secondary.light', bgcolor: 'transparent' },
                   transition: '0.2s',
                 }}
@@ -99,10 +95,12 @@ export default function Navbar() {
             <Button
               variant={showScrolled ? 'contained' : 'outlined'}
               color="secondary"
+              size="small"
               sx={{
                 ml: 2,
-                color: showScrolled ? 'white' : 'white',
+                color: 'white',
                 borderColor: showScrolled ? undefined : 'rgba(255,255,255,0.5)',
+                whiteSpace: 'nowrap',
                 '&:hover': { borderColor: 'white' },
               }}
               onClick={() => navigate('/login')}
@@ -113,26 +111,15 @@ export default function Navbar() {
               variant={showScrolled ? 'outlined' : 'text'}
               size="small"
               sx={{
-                ml: 1,
                 color: showScrolled ? 'text.secondary' : 'rgba(255,255,255,0.7)',
                 fontSize: '0.8rem',
+                whiteSpace: 'nowrap',
                 '&:hover': { color: showScrolled ? 'secondary.main' : 'white' },
               }}
               onClick={() => navigate('/login')}
             >
               CRM
             </Button>
-            <IconButton
-              onClick={toggle}
-              size="small"
-              sx={{
-                ml: 1,
-                color: showScrolled ? 'text.secondary' : 'rgba(255,255,255,0.7)',
-                '&:hover': { color: showScrolled ? 'secondary.main' : 'white' },
-              }}
-            >
-              {mode === 'dark' ? <LightModeIcon fontSize="small" /> : <DarkModeIcon fontSize="small" />}
-            </IconButton>
           </Box>
 
           <IconButton
@@ -188,14 +175,7 @@ export default function Navbar() {
               />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton onClick={toggle} sx={{ px: 3, py: 1.5 }}>
-              <ListItemText
-                primary={mode === 'dark' ? 'Светлая тема' : 'Тёмная тема'}
-                primaryTypographyProps={{ fontWeight: 500, sx: { opacity: 0.7 } }}
-              />
-            </ListItemButton>
-          </ListItem>
+
         </List>
       </Drawer>
     </AppBar>
