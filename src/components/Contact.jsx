@@ -1,9 +1,27 @@
-import { Container, Typography, Grid, Paper, Box, TextField, Button } from '@mui/material'
+import { useState } from 'react'
+import { Container, Typography, Grid, Paper, Box, TextField, Button, Snackbar, Alert } from '@mui/material'
 import PhoneIcon from '@mui/icons-material/Phone'
 import EmailIcon from '@mui/icons-material/Email'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 
+const initialForm = { name: '', phone: '', email: '', message: '' }
+
 export default function Contact() {
+  const [form, setForm] = useState(initialForm)
+  const [snack, setSnack] = useState({ open: false, severity: 'success', text: '' })
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!form.name || !form.phone) {
+      setSnack({ open: true, severity: 'error', text: 'Заполните имя и телефон' })
+      return
+    }
+    setSnack({ open: true, severity: 'success', text: 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.' })
+    setForm(initialForm)
+  }
+
   return (
     <Box id="contact" sx={{ py: { xs: 6, md: 10 }, bgcolor: 'grey.50' }}>
       <Container maxWidth="lg">
@@ -33,18 +51,18 @@ export default function Contact() {
           </Grid>
           <Grid item xs={12} md={7}>
             <Paper elevation={0} sx={{ p: 3, border: '1px solid', borderColor: 'grey.200' }}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                    <TextField fullWidth label="Ваше имя" size="small" />
+                    <TextField fullWidth label="Ваше имя" size="small" name="name" value={form.name} onChange={handleChange} />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField fullWidth label="Телефон" size="small" />
+                    <TextField fullWidth label="Телефон" size="small" name="phone" value={form.phone} onChange={handleChange} />
                   </Grid>
                 </Grid>
-                <TextField fullWidth label="Email" size="small" />
-                <TextField fullWidth label="Сообщение" multiline rows={4} size="small" />
-                <Button variant="contained" color="secondary" size="large" sx={{ color: 'white', alignSelf: 'flex-start' }}>
+                <TextField fullWidth label="Email" size="small" name="email" value={form.email} onChange={handleChange} />
+                <TextField fullWidth label="Сообщение" multiline rows={4} size="small" name="message" value={form.message} onChange={handleChange} />
+                <Button type="submit" variant="contained" color="secondary" size="large" sx={{ color: 'white', alignSelf: 'flex-start' }}>
                   Отправить заявку
                 </Button>
               </Box>
@@ -52,6 +70,11 @@ export default function Contact() {
           </Grid>
         </Grid>
       </Container>
+      <Snackbar open={snack.open} autoHideDuration={5000} onClose={() => setSnack({ ...snack, open: false })} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+        <Alert severity={snack.severity} onClose={() => setSnack({ ...snack, open: false })} variant="filled">
+          {snack.text}
+        </Alert>
+      </Snackbar>
     </Box>
   )
 }
