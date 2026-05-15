@@ -21,6 +21,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
+  const isHome = location.pathname === '/'
+  const showScrolled = scrolled || !isHome
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -45,13 +47,13 @@ export default function Navbar() {
   return (
     <AppBar
       position="fixed"
-      elevation={scrolled ? 2 : 0}
+      elevation={showScrolled ? 2 : 0}
       sx={{
-        bgcolor: scrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        color: scrolled ? 'primary.main' : 'white',
+        bgcolor: showScrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
+        backdropFilter: showScrolled ? 'blur(12px)' : 'none',
+        color: showScrolled ? 'primary.main' : 'white',
         transition: 'all 0.3s ease',
-        boxShadow: scrolled ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
+        boxShadow: showScrolled ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
       }}
     >
       <Container maxWidth="lg">
@@ -60,14 +62,14 @@ export default function Navbar() {
             sx={{ display: 'flex', alignItems: 'center', gap: 1.5, cursor: 'pointer' }}
             onClick={() => navigate('/')}
           >
-            <RestaurantMenuIcon sx={{ color: scrolled ? 'secondary.main' : 'secondary.light', fontSize: 30 }} />
+            <RestaurantMenuIcon sx={{ color: showScrolled ? 'secondary.main' : 'secondary.light', fontSize: 30 }} />
             <Typography
               variant="h6"
               sx={{
                 fontWeight: 700,
                 letterSpacing: 1,
                 fontSize: { xs: '0.85rem', sm: '1rem' },
-                color: scrolled ? 'primary.main' : 'white',
+                color: showScrolled ? 'primary.main' : 'white',
               }}
             >
               PRO BANQUET
@@ -80,9 +82,9 @@ export default function Navbar() {
                 key={item.label}
                 onClick={() => handleNav(item.path)}
                 sx={{
-                  color: scrolled ? 'text.primary' : 'white',
+                  color: showScrolled ? 'text.primary' : 'white',
                   opacity: 0.85,
-                  '&:hover': { opacity: 1, color: scrolled ? 'secondary.main' : 'secondary.light', bgcolor: 'transparent' },
+                  '&:hover': { opacity: 1, color: showScrolled ? 'secondary.main' : 'secondary.light', bgcolor: 'transparent' },
                   transition: '0.2s',
                 }}
               >
@@ -90,12 +92,12 @@ export default function Navbar() {
               </Button>
             ))}
             <Button
-              variant={scrolled ? 'contained' : 'outlined'}
+              variant={showScrolled ? 'contained' : 'outlined'}
               color="secondary"
               sx={{
                 ml: 2,
-                color: scrolled ? 'white' : 'white',
-                borderColor: scrolled ? undefined : 'rgba(255,255,255,0.5)',
+                color: showScrolled ? 'white' : 'white',
+                borderColor: showScrolled ? undefined : 'rgba(255,255,255,0.5)',
                 '&:hover': { borderColor: 'white' },
               }}
               onClick={() => navigate('/login')}
@@ -103,13 +105,13 @@ export default function Navbar() {
               Личный кабинет
             </Button>
             <Button
-              variant={scrolled ? 'outlined' : 'text'}
+              variant={showScrolled ? 'outlined' : 'text'}
               size="small"
               sx={{
                 ml: 1,
-                color: scrolled ? 'text.secondary' : 'rgba(255,255,255,0.7)',
+                color: showScrolled ? 'text.secondary' : 'rgba(255,255,255,0.7)',
                 fontSize: '0.8rem',
-                '&:hover': { color: scrolled ? 'secondary.main' : 'white' },
+                '&:hover': { color: showScrolled ? 'secondary.main' : 'white' },
               }}
               onClick={() => navigate('/login')}
             >
@@ -118,7 +120,7 @@ export default function Navbar() {
           </Box>
 
           <IconButton
-            sx={{ display: { md: 'none' }, color: scrolled ? 'primary.main' : 'white' }}
+            sx={{ display: { md: 'none' }, color: showScrolled ? 'primary.main' : 'white' }}
             onClick={() => setMobileOpen(true)}
           >
             <MenuIcon />
