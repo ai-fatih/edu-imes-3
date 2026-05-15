@@ -70,7 +70,7 @@ export default function EmployeeDashboard() {
   }
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', pt: { xs: 10, md: 12 }, pb: 6 }}>
+    <Box sx={{ minHeight: '100vh', background: 'linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%)', pt: { xs: 10, md: 12 }, pb: 6 }}>
       <Container maxWidth="xl">
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2, mb: 4 }}>
           <Box>

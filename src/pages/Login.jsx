@@ -24,7 +24,7 @@ export default function Login() {
   }
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #f8f9fa 0%, #e8eaf6 100%)' }}>
+    <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%)' }}>
       <Container maxWidth="xs">
         <Paper elevation={0} sx={{ p: 4, border: '1px solid', borderColor: 'grey.100', borderRadius: 3 }}>
           <Box sx={{ textAlign: 'center', mb: 3 }}>
